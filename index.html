@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <nav class="header__menu menu">
+            <h3 class="menu__logo">QuizAsm</h3>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a data-link="1" class="menu__link"> Главная </a>
+              </li>
+              <li class="menu__item">
+                <a data-link="2" class="menu__link">Теория</a>
+              </li>
+              <li class="menu__item">
+                <a data-link="3" class="menu__link">Тест</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="main" id="main">
+        <div class="app" id="app">
+          <div class="main__page " data-page = 1 >
+            <section class="main__welcome welcome">
+              <div class=" welcome__container">
+                <div class="welcome__intro intro">
+                    <h1 class="intro__label"> 
+                      
+                    </h1>
+                 </div>
+                 <a href="#" class="welcome__scrolDown scrollDown"></a>
+            </section>
+            <section class="main__description description">
+                <div class="description__container">
+                  <h2 class="description__label">
+                    Здесь вы можете ознакомится 
+                  </h2>
+                </div>
+                <div class="description__info">
+                  <div class="description__object description__object_left">
+                    <h3 class="description__text description__text_left">
+                      Теорией ассемблера
+                    </h3>
+                    <a href="" class="description__link description__link_theory">
+                      
+                      <svg class="description__arrow" width="100" height="50" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2929 0.292893C11.6834 -0.0976311 12.3166 -0.0976311 12.7071 0.292893L19.7071 7.29289C20.0976 7.68342 20.0976 8.31658 19.7071 8.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071C10.9024 15.3166 10.9024 14.6834 11.2929 14.2929L16.5858 9H1C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7H16.5858L11.2929 1.70711C10.9024 1.31658 10.9024 0.683417 11.2929 0.292893Z" fill="white"/>
+                      </svg>
+                    </a> 
+                  </div> 
+                </div>
+                
+                <div class="description__container">
+                  <h2 class="description__label">
+                     А также проверить себя
+                  </h2>
+                </div>
+                <div class="description__info">
+                  <div class="description__object description__object_right">
+                    <h3 class="description__text description__text_right">
+                      Пройти тест
+                    </h3>
+                    <a href="#" class="description__link description__link_test">
+                      <svg class="description__arrow description__arrow_right" width="100" height="50" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2929 0.292893C11.6834 -0.0976311 12.3166 -0.0976311 12.7071 0.292893L19.7071 7.29289C20.0976 7.68342 20.0976 8.31658 19.7071 8.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071C10.9024 15.3166 10.9024 14.6834 11.2929 14.2929L16.5858 9H1C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7H16.5858L11.2929 1.70711C10.9024 1.31658 10.9024 0.683417 11.2929 0.292893Z" fill="white"/>
+                      </svg>
+                    </a>
+                  </div> 
+                </div>
+            </section>
+          </div>
+          <div class="theory__page hidden" style="color: aqua;" data-page="2">
+            theory Page
+          </div>
+          <div class="test__page hidden" data-page="3">
+            test__page
+          </div>
+         
+        </div>
+      </main>
+      <footer class="footer footer" id="footer">
+        <div class="footer__container">
+          <div class="footer__user user">
+            <div class="user__info"></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="index.js" type="module" defer></script>
+  </body>
+</html>

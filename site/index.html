@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>ASM</title>
+	<link rel="shortcut icon" href="img/icon3.png" type="image/x-icon">
+</head>
+<body id ="intoduction">
+	<header class="header header--fixed" id="header">
+		<div class="container_ d-flex i-center justify-content-start">
+			<div class="logo mx-5">
+				<div class="logo__item">
+					<p class="logo__text">ASM</p>
+				</div>
+			</div>
+			<div class="nav d-flex mx-5">
+				<ul class="nav__menu d-flex i-center justify-content-between">
+					<li class="nav__item">
+						<a href="#intoduction" class="nav__link">
+							Главная
+						</a>
+					</li>
+						<li class="nav__item">
+						<a href="#arithmetic" class="nav__link">
+							Сложение
+						</a>
+					</li>
+						<li class="nav__item">
+						<a href="#sub" class="nav__link">
+							Вычитание
+						</a>
+					<li class="nav__item">
+						<a href="#multy" class="nav__link">
+							Умножение
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="#div" class="nav__link">
+							Деление
+						</a>
+					</li>
+					</li>
+				</ul>
+			</div>	
+		</div>
+	</header>
+	<section class="intoduction" >
+		<div class="container_">
+			<div class="actions-intro">
+				<h1 class="actions__text">
+					арифметические операции в ассемблере
+				</h1>
+			</div>
+			<div class="vid-info d-flex i-center">
+				<div class="vid">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/mgbxxWTgkbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="intro">
+					<h2 class="intro__main">
+						Вступление
+					</h2>
+					<p class="intro__text">
+						В данном видеоролике представлена краткая теория про регистры процессора, их основные виды и предназначение, а также команды для самых базовых арифметических операций (сложение, вычитание, умножение и деление) в языке низкого уровня под названием  <span>assembly</span>.
+					</p>
+				</div>
+			</div>
+			<h1 class="practice">
+				Посмотрим на практике
+			</h1>
+		</div>
+	</section>
+
+	<section class="arithmetic" id="arithmetic">
+		<div class="container_">
+			<div class="actions actions_1 d-flex i-center">
+				<div class="vid">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/uZJIix5oa1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="add j-content-b i-center" id="add">
+					<h2 class="action__add">
+						Операция сложения
+					</h2>
+					<p class="action__about-add">
+						В этом видео более подробно затрагивается такая арифметическая операция как <span>сложение</span>.Рассматриваются команды ввода и сложения на уровне памяти. Описывается процесс самой суммы и изменение значения регистров процессора и от чего они зависят.
+
+					</p>
+				</div>
+			</div>
+			<div class="actions actions_2 d-flex i-center" id="sub">
+				<div class="sub j-content-b i-center">
+					<h2 class="action__sub">
+						Операция вычитания
+					</h2>
+					<p class="action__about-sub">
+						В данном фрагменте затрагивается тема <span>вычитание</span> десятичных чисел в ассемблере.Какие команды требуются для проведения данной операции и где будет записан результат.Также уделяется внимание регистрам, их изменению в ходе выполнения этого действия.
+
+					</p>
+				</div>
+				<div class="vid">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Nj83QrAvJTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="mult-div">
+		<div class="container_">
+			<div class="more-interes">
+				<h1 class="more-interes__text">
+					А теперь намного интереснее
+				</h1>
+			</div>
+		</div>
+		<div class="act-mult-div">
+			<div class="container_">
+				<div class="actions actions_1 d-flex i-center" id="multy">
+				<div class="vid">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/HK1LOYrs0P0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="add j-content-b i-center" >
+					<h2 class="action__add action__multy">
+						Операция умножения
+					</h2>
+					<p class="action__about-add action__about-mult">
+						В этом видео более подробно затрагивается такая арифметическая операция как <span>умножение</span>.Рассматриваются особенности и нюансы умножения в этом яп.Также заостряется внимание на командах и регистрах откуда берется и куда заноситься информация.
+
+					</p>
+				</div>
+			</div>
+			<div class="actions actions_2 d-flex i-center" id="div">
+				<div class="sub j-content-b i-center">
+					<h2 class="action__sub action_div">
+						Операция Деления
+					</h2>
+					<p class="action__about-sub action__about-div">
+						В данном фрагменте затрагивается тема <span>деление </span>десятичных чисел в ассемблере.Рассматриваются особенности и нюансы умножения в этом яп.Также заостряется внимание на командах и регистрах откуда берется и куда заноситься информация.
+
+					</p>
+				</div>
+				<div class="vid">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/TaBdDrve704" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			</div>		
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="container_">
+			<ul class="credits d-flex j-content-b">
+				<li class="credits__item">
+					Сергей Васютин & Никита Кумашов
+				</li>
+				<li class="credits__item">
+					все права защищены
+				</li>
+			</ul>
+		</div>
+	</footer>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
