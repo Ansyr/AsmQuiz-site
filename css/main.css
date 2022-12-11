@@ -58,6 +58,9 @@ h3 {
 .hidden-obj {
   opacity: 0;
 }
+.footer-anim {
+  animation: fadeInUp 1.4s ease-in;
+}
 .visible {
   display: block;
 }

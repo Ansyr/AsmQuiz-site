@@ -88,6 +88,42 @@ export class App {
     } catch (e) {
       console.log(e);
     }
+    try {
+      const scrl = document.querySelector('.scrollDown');
+      scrl.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector('.block').scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    } catch (e) {
+      console.log('Ошибка в скролле', e);
+    }
+    try {
+      const footerElems = document.querySelectorAll('[data-anim]');
+
+      const footerAnim = (entries, observer) => {
+        const elemFooter = entries[0];
+        entries.forEach(elm => {
+          if (elm.isIntersecting) {
+            elm.target.classList.remove('hidden-obj');
+            elm.target.classList.add('footer-anim');
+            observer.unobserve(elm.target);
+          }
+        });
+      };
+      const footerElemsObserver = new IntersectionObserver(footerAnim, {
+        threshold: 1,
+      });
+      footerElems.forEach(el => {
+        el.classList.add('hidden-obj');
+        footerElemsObserver.observe(el);
+      });
+      console.log(footerElems);
+    } catch (e) {
+      console.log('Ошибка в анимации футера', e);
+    }
   }
   changePage(i) {
     this.pages.forEach(page => {
