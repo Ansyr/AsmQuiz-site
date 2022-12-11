@@ -124,6 +124,32 @@ export class App {
     } catch (e) {
       console.log('Ошибка в анимации футера', e);
     }
+    try {
+      const tabsElems = document.querySelectorAll('.tabs__item');
+      const contentElem = document.querySelectorAll('.tabs__block');
+      console.log(contentElem);
+      console.log(tabsElems);
+      contentElem.forEach(elem => {
+        elem.classList.add('hidden');
+      });
+      tabsElems.forEach((elem, i) => {
+        elem.addEventListener('click', e => {
+          const headerElem = document.querySelector('body');
+          e.preventDefault();
+          contentElem.forEach(el => {
+            el.classList.add('hidden');
+          });
+          contentElem[i].classList.toggle('hidden');
+          console.log(e);
+          headerElem.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        });
+      });
+    } catch (e) {
+      console.log('Ошибка при смене таба:', e);
+    }
   }
   changePage(i) {
     this.pages.forEach(page => {
@@ -132,6 +158,9 @@ export class App {
       } else {
         page.classList.add('hidden');
       }
+    });
+    document.querySelector('body').scrollIntoView({
+      behavior: 'smooth',
     });
   }
 }
