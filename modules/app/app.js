@@ -48,6 +48,46 @@ export class App {
     } catch (e) {
       console.log(e);
     }
+    try {
+      const cb = (entries, observer) => {
+        entries.forEach(entrie => {
+          if (entrie.isIntersecting) {
+            entrie.target.classList.remove('hidden-obj');
+            entrie.target.classList.add('fadeInUpAnim');
+            observer.unobserve(entrie.target);
+          }
+        });
+      };
+      const observer = new IntersectionObserver(
+        cb,
+
+        {
+          root: null,
+          threshold: 0.2,
+        }
+      );
+      document.querySelectorAll('.description__object').forEach(anim => {
+        observer.observe(anim);
+      });
+      const footerObj = document.querySelector('.footer');
+
+      const cbF = (entries, observer) => {
+        const entrie = entries[0];
+        console.log(entrie, '123');
+        if (entrie.isIntersecting) {
+          entrie.target.classList.remove('hidden-obj');
+          entrie.target.classList.add('fadeInUpAnim');
+          observer.unobserve(entrie.target);
+        }
+      };
+      const footerObserver = new IntersectionObserver(cbF, {
+        root: null,
+        threshold: 0.2,
+      });
+      footerObserver.observe(footerObj);
+    } catch (e) {
+      console.log(e);
+    }
   }
   changePage(i) {
     this.pages.forEach(page => {
