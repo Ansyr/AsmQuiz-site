@@ -48,10 +48,12 @@ h1 {
 }
 h2 {
   font-size: 34px;
+  color: #ccc;
 }
 h3 {
   font-weight: bold;
   font-size: 24px;
+  text-transform: none;
 }
 .visible {
   display: block;
@@ -107,6 +109,9 @@ main {
 }
 .menu__logo {
   animation: fadeInUp 0.5s ease-in;
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: none;
 }
 .menu__list {
   display: flex;
@@ -251,7 +256,100 @@ main {
   width: 500px;
   text-align: center;
 }
-
+/* Блок с теорией */
+.theory {
+  padding-top: 200px;
+}
+.footer {
+  padding-bottom: 40px;
+}
 .user {
   margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+.user__info {
+}
+
+.user__info:before {
+  content: '';
+  border-top: 2px solid #ccc;
+  width: 1200px;
+  padding-top: 20px;
+  display: block;
+  text-align: center;
+}
+
+.user__list-links {
+  display: flex;
+  justify-content: space-between;
+}
+.user__link {
+  transition: 0.4s all;
+  text-transform: none;
+  position: relative;
+}
+.user__link-item {
+  text-transform: none;
+}
+.user__text {
+  text-transform: none;
+  margin-bottom: 10px;
+}
+.user__name {
+  text-transform: none;
+}
+.user__list-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__ref-list {
+  display: flex;
+  justify-content: space-between;
+}
+.user__link {
+  font-size: 18px;
+}
+.user__link_vk {
+  right: 25px;
+}
+.user__link_vk::after {
+  content: '';
+  position: absolute;
+  border: 3px solid #3b5998;
+  border-radius: 50%;
+  top: 9px;
+  font-size: 10px;
+  right: 38px;
+}
+.user__link_vk:hover {
+  color: #3b5998;
+}
+.user__link_tg::after {
+  content: '';
+  position: absolute;
+  border: 3px solid #55acee;
+  border-radius: 50%;
+  top: 9px;
+  font-size: 10px;
+  right: 38px;
+}
+.user__link_tg:hover {
+  color: #55acee;
+}
+.user__link_git {
+  left: 25px;
+}
+.user__link_git:after {
+  content: '';
+  position: absolute;
+  border: 3px solid #b42d29;
+  border-radius: 50%;
+  top: 9px;
+  font-size: 10px;
+  right: 27px;
+}
+.user__link_git:hover {
+  color: #b42d29;
 }

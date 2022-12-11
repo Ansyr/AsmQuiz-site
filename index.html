@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/animate.css" />
-    <title>Document</title>
+    <title>QuizAsm</title>
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
         <div class="header__container">
           <nav class="header__menu menu">
-            <h3 class="menu__logo">QuizAsm</h3>
+            <a class="menu__logo " data-link ="1">QuizAsm</a>
             <ul class="menu__list">
               <li class="menu__item">
                 <a data-link="1" class="menu__link"> Главная </a>
@@ -43,7 +43,7 @@
             <section class="main__description description">
                 <div class="description__container">
                   <h2 class="description__label">
-                    Здесь вы можете ознакомится
+                    Здесь вы можете ознакомитЬся
                   </h2>
                 </div>
                 <div class="description__info">
@@ -79,8 +79,14 @@
                 </div>
             </section>
           </div>
-          <div class="theory__page hidden" style="color: aqua;" data-page="2">
-            theory Page
+          <div class="theory__page hidden"  data-page="2">
+            <section class = 'main__theory theory'>
+              <div class="theory__container">
+                <h2 class="theory__text">
+                  Выберите категорию
+                </h2>
+              </div>
+            </section>
           </div>
           <div class="test__page hidden" data-page="3">
             test__page
@@ -91,7 +97,46 @@
       <footer class="footer footer" id="footer">
         <div class="footer__container">
           <div class="footer__user user">
-            <div class="user__info"></div>
+            <div class="user__info">
+              <ul class="user__list-info">
+                <li class="user__info-items">
+                  <p class="user__text">
+                    работа выполнена
+                  </p>
+                  <p class="user__name">
+                    Ansyr
+                  </p>
+                </li>
+                <li class="user__info-items">
+                  <p class="user__text">
+                    Обратная связь
+                  </p>
+                  <ul class="user__ref-list">
+                    <li class="user__ref-items">
+                      
+                      <a href="" class="user__link user__link_vk">
+                        vk
+                      </a>
+                      <a href="" class="user__link user__link_tg">
+                        tg
+                      </a>
+                      <a href="" class="user__link user__link_git">
+                        gh
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="user__info-items">
+                  <p class="user__text">
+                    Напиши привет 
+                  </p>
+                  <a href="mailto:vasutin2003@gmail.com" class="user__link user__link_mail">
+                    vasutin2003@gmail.com
+                  </a>
+                </li>
+              </ul>
+              
+            </div>
           </div>
         </div>
       </footer>
