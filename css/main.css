@@ -134,7 +134,10 @@ main {
   color: #ccc;
   padding-right: 100px;
 }
-
+.menu__link:hover {
+  opacity: 0.8;
+  transition: 0.4s all;
+}
 .intro__label {
   text-align: center;
   position: relative;
@@ -184,6 +187,7 @@ main {
   transform: rotate(-45deg);
   box-sizing: border-box;
 }
+
 .main__description {
   padding-bottom: 200px;
 }
@@ -371,29 +375,41 @@ main {
 .user__link_git:hover {
   color: #b42d29;
 }
-
+.user__link_mail:hover {
+  opacity: 0.8;
+}
 /* Tabs theory */
 .tabs {
-  margin: 0 0 0 50px;
   display: flex;
 }
-.tabs__item {
-  display: flex;
-}
+
 .tabs__item {
   flex: 0 1 100%;
+  width: 190px;
   height: 50px;
   display: flex;
   margin-top: 100px;
+  margin-bottom: 100px;
   margin-right: 50px;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   text-decoration: none;
+  animation: fadeInUp 0.3s ease-in;
+  display: block;
+  border: 2px solid #ccc;
+  background-color: #ccc;
+  border-radius: 6px;
+  text-align: center;
+  padding-top: 15px;
 }
+.tabs__items:hover {
+  color: #000;
+}
+
 .tabs__block {
   margin-top: 100px;
   font-size: 18px;
-  list-style: 24px;
+  animation: fadeInUp 0.3s ease-in;
 }
 .tabs__block:target {
   display: block;
