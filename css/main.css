@@ -39,6 +39,9 @@ body {
   height: 100%;
   color: #ccc;
 }
+.wrapper {
+  color: #ccc;
+}
 body {
   background-color: #000;
 }
@@ -55,8 +58,18 @@ h3 {
   font-size: 24px;
   text-transform: none;
 }
-.change-page-anim {
-  animation: bounceOutLeft 0.5s ease-in;
+
+.btn {
+  height: 50px;
+  padding: 25px 50px;
+  color: #000;
+  border-radius: 4px;
+  background-color: #ccc;
+}
+
+.btn_medium {
+  width: 200px;
+  padding: 0 50px;
 }
 .hidden-obj {
   opacity: 0;
@@ -476,4 +489,19 @@ main {
 
 .tabs__class-registr {
   margin-top: 30px;
+}
+/* quiz */
+.test {
+  padding-top: 150px;
+  text-align: center;
+}
+.test__dif {
+  padding-bottom: 100px;
+}
+.test__dif-obj {
+  display: flex;
+  justify-content: center;
+}
+.test__btn {
+  margin: 0 25px 0 25px;
 }
