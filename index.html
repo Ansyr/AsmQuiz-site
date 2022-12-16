@@ -49,9 +49,9 @@
                 </div>
                 <div class="description__info">
                   <div class="description__object description__object_left hidden-obj">
-                    <h3 class="description__text description__text_left">
-                      Теорией ассемблера
-                    </h3>
+                    <a data-link="2" class="description__text description__text_left">
+                      теорией ассемблера
+                    </a>
                     <a  class="description__link description__link_theory" data-link="2">
                       
                       <svg class="description__arrow" width="100" height="50" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,9 +69,9 @@
                 </div>
                 <div class="description__info">
                   <div class="description__object description__object_right hidden-obj">
-                    <h3 class="description__text description__text_right">
-                      Пройти тест
-                    </h3>
+                    <a data-link="3" class="description__text description__text_right">
+                      пройти тест
+                    </a>
                     <a  class="description__link description__link_test" data-link="3">
                       <svg class="description__arrow description__arrow_right" width="100" height="50" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2929 0.292893C11.6834 -0.0976311 12.3166 -0.0976311 12.7071 0.292893L19.7071 7.29289C20.0976 7.68342 20.0976 8.31658 19.7071 8.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071C10.9024 15.3166 10.9024 14.6834 11.2929 14.2929L16.5858 9H1C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7H16.5858L11.2929 1.70711C10.9024 1.31658 10.9024 0.683417 11.2929 0.292893Z" fill="white"/>
@@ -90,7 +90,7 @@
                 <div class="theory__tabs tabs">
                   <nav class="tabs__items">
                     <a  class="tabs__item">
-                      Первая вкладка
+                      Регистры
                     </a>
                     <a  class="tabs__item">
                       Вторая вкладка
@@ -116,7 +116,191 @@
                   </nav>
                   <div class="tabs__body">
                     <div class="tabs__block" >
-                      Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
+                      <p class="tabs__text">
+                        Регистры – собственные ячейки памяти процессора, предназначенные для кратковременного хранения и обработки данных. <br><br>
+                        Регистры можно разделить на регистры общего назначения, указатель команд, регистр флагов и сегментные регистры. <br><br>
+                        К регистрам общего назначения относится группа из 8 регистров, которые можно использовать в программе на языке ассемблера. Все регистры имеют размер 32 бита и могут быть разделены на 2 или более частей. <br><br>
+                        <div class="tabs__registers">
+                          <ul class="tabs__reg-list">
+                            <li class="tabs__reg-items">
+                              <p class="tabs__reg-name">
+                                EAX
+                              </p>
+                              <div class="tabs__reg-obj tabs__reg-obj_long">
+                                
+                              </div>
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_1">
+                                <p class="tabs__reg-spec">
+                                  AH(8 бит)
+                                </p>
+                              </div>
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_2">
+                                <p class="tabs__reg-spec">
+                                  AL(8 бит)
+                                </p>
+                              </div>
+                            
+                            </li>
+
+                            <li class="tabs__reg-items">
+                              <p class="tabs__reg-name">
+                                EBX
+                              </p>
+                              <div class="tabs__reg-obj tabs__reg-obj_long">
+                                
+                              </div>
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_1">
+                                <p class="tabs__reg-spec">
+                                  BH(8 бит)
+                                </p>
+                              </div>
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_2">
+                                <p class="tabs__reg-spec">
+                                  BL(8 бит)
+                                </p>
+                              </div>
+                            
+                            </li>
+
+
+                            <li class="tabs__reg-items">
+                              <p class="tabs__reg-name">
+                                ECX
+                              </p>
+                              <div class="tabs__reg-obj tabs__reg-obj_long">
+                                
+                              </div>
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_1">
+                                <p class="tabs__reg-spec">
+                                  CH(8 бит)
+                                </p>
+                              </div>
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_2">
+                                <p class="tabs__reg-spec">
+                                  CL(8 бит)
+                                </p>
+                              </div>
+                            
+                            </li>
+
+
+                            <li class="tabs__reg-items">
+                              <p class="tabs__reg-name">
+                                EDX
+                              </p>
+                              <div class="tabs__reg-obj tabs__reg-obj_long">
+                                
+                              </div>
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_1">
+                                <p class="tabs__reg-spec">
+                                  DH(8 бит)
+                                </p>
+                              </div>
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_2">
+                                <p class="tabs__reg-spec">
+                                  DL(8 бит)
+                                </p>
+                              </div>
+                            
+                            </li>
+
+
+                            <li class="tabs__reg-items tabs__reg-items_red">
+                              <p class="tabs__reg-name">
+                                ESI
+                              </p>
+                              <div class="tabs__reg-obj tabs__reg-obj_long">
+                                
+                              </div>
+                             
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_1">
+                                <p class="tabs__reg-spec">
+                                  SI(16 бит)
+                                </p>
+                              </div>
+                            
+                            </li>
+                           
+                            <li class="tabs__reg-items tabs__reg-items_red">
+                              <p class="tabs__reg-name">
+                                EDI
+                              </p>
+                              <div class="tabs__reg-obj tabs__reg-obj_long">
+                                
+                              </div>
+                             
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_1">
+                                <p class="tabs__reg-spec">
+                                  DI(16 бит)
+                                </p>
+                              </div>
+                            
+                            </li>
+
+                            <li class="tabs__reg-items tabs__reg-items_red">
+                              <p class="tabs__reg-name">
+                                ESP
+                              </p>
+                              <div class="tabs__reg-obj tabs__reg-obj_long">
+                                
+                              </div>
+                             
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_1">
+                                <p class="tabs__reg-spec">
+                                  SP(16 бит)
+                                </p>
+                              </div>
+                            
+                            </li>
+
+                            <li class="tabs__reg-items tabs__reg-items_red">
+                              <p class="tabs__reg-name">
+                                EBP
+                              </p>
+                              <div class="tabs__reg-obj tabs__reg-obj_long">
+                                
+                              </div>
+                             
+                              <div class="tabs__reg-obj tabs__reg-obj_short tabs__reg-obj_short_1">
+                                <p class="tabs__reg-spec">
+                                  BP(16 бит)
+                                </p>
+                              </div>
+                            
+                            </li>
+
+                            
+                          </ul>
+
+                          
+                        </div>
+                        Как видно из рисунка, регистры ESI, EDI, ESP и EBP позволяют обращаться к младшим 16 битам по именам SI, DI, SP и BP соответственно, а регистры EAX, EBX, ECX и EDX позволяют обращаться как к младшим 16 битам (по именам AX, BX, CX и DX), так и к двум младшим байтам по отдельности (по именам AH/AL, BH/BL, CH/CL и DH/DL). <br><br>
+                        Названия регистров происходят от их назначения:
+                        <ul class="tabs__class-registr">
+                          <li class="tabs__class-registr">
+                           <b> EAX/AX/AH/AL (accumulator register)</b> – аккумулятор
+                          </li>
+                          <li class="tabs__class-registr">
+                            EBX/BX/BH/BL (base register) – регистр базы
+                          </li>
+
+                          <li class="tabs__class-registr">
+                            ECX/CX/CH/CL (counter register) – счётчик
+                          </li>
+                          <li class="tabs__class-registr">
+                            ESI/SI (source index register) – индекс источника
+                          </li>
+                          <li class="tabs__class-registr">
+                            EDI/DI (destination index register) – индекс приёмника (получателя)
+                          </li>
+                          <li class="tabs__class-registr">
+                            ESP/SP (stack pointer register) – регистр указателя стека
+                          </li>
+                          <li class="tabs__class-registr">
+                            EBP/BP (base pointer register) – регистр указателя базы кадра стека
+                          </li>
+                        </ul>                  
+                      </p>
                     </div>
                     <div class="tabs__block" >
                       Вторая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.

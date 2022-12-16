@@ -55,6 +55,9 @@ h3 {
   font-size: 24px;
   text-transform: none;
 }
+.change-page-anim {
+  animation: bounceOutLeft 0.5s ease-in;
+}
 .hidden-obj {
   opacity: 0;
 }
@@ -271,6 +274,11 @@ main {
 .description__text {
   width: 500px;
   text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.description__text:hover {
+  opacity: 0.8;
 }
 /* Блок с теорией */
 .theory {
@@ -413,4 +421,59 @@ main {
 }
 .tabs__block:target {
   display: block;
+}
+
+/* Регистры */
+.tabs__registers {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.tabs__reg-list {
+}
+.tabs__reg-items {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.tabs__reg-name {
+  margin-right: 20px;
+}
+.tabs__reg-obj {
+  border: 2px solid #ccc;
+}
+.tabs__reg-obj_long {
+  width: 500px;
+  height: 30px;
+  background-color: #729b60db;
+}
+.tabs__reg-obj_short {
+  width: 250px;
+  height: 30px;
+}
+.tabs__reg-obj_short_1 {
+  background-color: #51a12e;
+}
+.tabs__reg-obj_short_2 {
+  background-color: #51a12e;
+}
+.tabs__reg-items_red:nth-child(5) {
+  padding-top: 30px;
+}
+.tabs__reg-spec {
+  text-align: center;
+  margin-top: 4px;
+}
+.tabs__reg-items_red .tabs__reg-obj_short_1 {
+  width: 500px;
+  height: 30px;
+  background-color: #b42d29;
+}
+.tabs__reg-items_red .tabs__reg-obj_long {
+  background-color: #b42d29c7;
+}
+
+.tabs__class-registr {
+  margin-top: 30px;
 }
