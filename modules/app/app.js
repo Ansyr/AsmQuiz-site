@@ -1,155 +1,19 @@
 'use strict';
 export class App {
-  constructor(root, selector, linkSelector) {
+  constructor(root, selector, linkSelector, afterChangePage) {
     this.pages = document.querySelectorAll(selector);
     this.links = document.querySelectorAll(linkSelector);
-    console.log(this.pages);
     this.root = document.querySelector(root);
-    console.log(this.links);
+    this.cb = afterChangePage;
   }
   init() {
     this.links.forEach(link => {
-      console.log(link);
       const orderNum = link.getAttribute('data-link');
-      console.log(orderNum);
       link.addEventListener('click', e => {
         e.stopPropagation();
         this.changePage(orderNum);
-        console.log(orderNum, e);
       });
     });
-  }
-  render() {
-    try {
-      const sleep = (ms, cb) => {
-        setTimeout(cb, ms);
-      };
-      const Writer = (ms, text, target, flag = true) => {
-        try {
-          let firstCall = flag;
-          if (!firstCall) {
-            target.innerHTML = '';
-            firstCall = true;
-          }
-          let i = 0;
-          if (i < text.length) {
-            document.querySelector(target).innerHTML += text.charAt(i);
-            i++;
-            setTimeout(() => Writer(ms, text.slice(i), target, firstCall), ms);
-          }
-        } catch (e) {
-          console.log(e);
-          firstCall = false;
-        }
-      };
-      sleep(2000, () =>
-        Writer(100, 'Добро пожаловать на наш сайт', `.intro__label`)
-      );
-    } catch (e) {
-      console.log(e);
-    }
-    try {
-      const cb = (entries, observer) => {
-        entries.forEach(entrie => {
-          if (entrie.isIntersecting) {
-            entrie.target.classList.remove('hidden-obj');
-            entrie.target.classList.add('fadeInUpAnim');
-            observer.unobserve(entrie.target);
-          }
-        });
-      };
-      const observer = new IntersectionObserver(
-        cb,
-
-        {
-          root: null,
-          threshold: 0.2,
-        }
-      );
-      document.querySelectorAll('.description__object').forEach(anim => {
-        observer.observe(anim);
-      });
-      const footerObj = document.querySelector('.footer');
-
-      const cbF = (entries, observer) => {
-        const entrie = entries[0];
-        console.log(entrie, '123');
-        if (entrie.isIntersecting) {
-          entrie.target.classList.remove('hidden-obj');
-          entrie.target.classList.add('fadeInUpAnim');
-          observer.unobserve(entrie.target);
-        }
-      };
-      const footerObserver = new IntersectionObserver(cbF, {
-        root: null,
-        threshold: 0.2,
-      });
-      footerObserver.observe(footerObj);
-    } catch (e) {
-      console.log(e);
-    }
-    try {
-      const scrl = document.querySelector('.scrollDown');
-      scrl.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector('.block').scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      });
-    } catch (e) {
-      console.log('Ошибка в скролле', e);
-    }
-    try {
-      const footerElems = document.querySelectorAll('[data-anim]');
-
-      const footerAnim = (entries, observer) => {
-        const elemFooter = entries[0];
-        entries.forEach(elm => {
-          if (elm.isIntersecting) {
-            elm.target.classList.remove('hidden-obj');
-            elm.target.classList.add('footer-anim');
-            observer.unobserve(elm.target);
-          }
-        });
-      };
-      const footerElemsObserver = new IntersectionObserver(footerAnim, {
-        threshold: 1,
-      });
-      footerElems.forEach(el => {
-        el.classList.add('hidden-obj');
-        footerElemsObserver.observe(el);
-      });
-      console.log(footerElems);
-    } catch (e) {
-      console.log('Ошибка в анимации футера', e);
-    }
-    try {
-      const tabsElems = document.querySelectorAll('.tabs__item');
-      const contentElem = document.querySelectorAll('.tabs__block');
-      console.log(contentElem);
-      console.log(tabsElems);
-      contentElem.forEach(elem => {
-        elem.classList.add('hidden');
-      });
-      tabsElems.forEach((elem, i) => {
-        elem.addEventListener('click', e => {
-          const headerElem = document.querySelector('body');
-          e.preventDefault();
-          contentElem.forEach(el => {
-            el.classList.add('hidden');
-          });
-          contentElem[i].classList.toggle('hidden');
-          console.log(e);
-          headerElem.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        });
-      });
-    } catch (e) {
-      console.log('Ошибка при смене таба:', e);
-    }
   }
   changePage(i) {
     this.pages.forEach(page => {
@@ -162,5 +26,6 @@ export class App {
     document.querySelector('body').scrollIntoView({
       behavior: 'smooth',
     });
+    this.cb();
   }
 }
