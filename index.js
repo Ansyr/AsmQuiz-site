@@ -30,13 +30,13 @@ window.addEventListener('DOMContentLoaded', () => {
     threshold: 1,
   }).init();
 
-  // const theoryTabs = new Tabs('.tabs__item', '.tabs__block', 'hidden', () => {
-  //   document.querySelector('body').scrollIntoView({
-  //     behavior: 'smooth',
-  //     block: 'start',
-  //   });
-  // });
-  // theoryTabs.init();
+  const theoryTabs = new Tabs('.tabs__item', '.tabs__block', 'hidden', () => {
+    document.querySelector('body').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  });
+  theoryTabs.init();
 
   new App('#app', 'div[data-page]', 'a[data-link]', () => {
     theoryTabs.close();
