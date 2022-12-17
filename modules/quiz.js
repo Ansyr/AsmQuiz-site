@@ -74,7 +74,6 @@ export class Quiz {
     this.showResult();
   }
   clickHandler(i) {
-    console.log('Hello');
     return this.changeQuestion(
       this.currentQuiz[this.currentQuestion].answers[i].isTrue
     );
@@ -115,9 +114,10 @@ export class Quiz {
     }
   }
   async init() {
-    const data = await fetch('../data/quiz.json').then(data => data.json());
+    const data = await fetch(
+      'https://639e44623542a26130598a8a.mockapi.io/Quiz'
+    ).then(data => data.json());
     this.quiz = data[0];
-    console.log(this.quiz);
     document.querySelectorAll('[data-difficulty]').forEach(btn => {
       btn.addEventListener('click', () => {
         const difficulty = btn.getAttribute('data-difficulty');
