@@ -5,6 +5,7 @@ import { sleep } from './modules/common/sleep.js';
 import { Writer } from './modules/writer.js';
 import { Observer } from './modules/observe.js';
 import { Tabs } from './modules/tabs.js';
+import { Quiz } from './modules/quiz.js';
 window.addEventListener('DOMContentLoaded', () => {
   sleep(2000, () =>
     Writer(100, 'Добро пожаловать на наш сайт', `.intro__label`)
@@ -37,8 +38,10 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
   theoryTabs.init();
-
+  const quiz = new Quiz();
+  quiz.init();
   new App('#app', 'div[data-page]', 'a[data-link]', () => {
     theoryTabs.close();
+    quiz.destroy();
   }).init();
 });

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/animate.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;700&display=swap" rel="stylesheet">
     <title>QuizAsm</title>
   </head>
   <body>
@@ -94,7 +97,7 @@
                       Регистры
                     </a>
                     <a  class="tabs__item">
-                      Вторая вкладка
+                      Сложениe
                     </a>
                     <a  class="tabs__item">
                       Третья вкладка
@@ -275,37 +278,104 @@
 
                           
                         </div>
-                        Как видно из рисунка, регистры ESI, EDI, ESP и EBP позволяют обращаться к младшим 16 битам по именам SI, DI, SP и BP соответственно, а регистры EAX, EBX, ECX и EDX позволяют обращаться как к младшим 16 битам (по именам AX, BX, CX и DX), так и к двум младшим байтам по отдельности (по именам AH/AL, BH/BL, CH/CL и DH/DL). <br><br>
-                        Названия регистров происходят от их назначения:
+                        <p class="tabs__text">
+                          Как видно из рисунка, регистры ESI, EDI, ESP и EBP позволяют обращаться к младшим 16 битам по именам SI, DI, SP и BP соответственно, а регистры EAX, EBX, ECX и EDX позволяют обращаться как к младшим 16 битам (по именам AX, BX, CX и DX), так и к двум младшим байтам по отдельности (по именам AH/AL, BH/BL, CH/CL и DH/DL). <br><br>
+                          Названия регистров происходят от их назначения:
+                        </p>
+                       
                         <ul class="tabs__class-registr">
                           <li class="tabs__class-registr">
-                           <b> EAX/AX/AH/AL (accumulator register)</b> – аккумулятор
+                           <span>EAX/AX/AH/AL </span>(accumulator register) – аккумулятор
                           </li>
                           <li class="tabs__class-registr">
-                            EBX/BX/BH/BL (base register) – регистр базы
+                            <span>EBX/BX/BH/BL</span> (base register) – регистр базы
                           </li>
 
                           <li class="tabs__class-registr">
-                            ECX/CX/CH/CL (counter register) – счётчик
+                            <span>ECX/CX/CH/CL</span> (counter register – счётчик
                           </li>
                           <li class="tabs__class-registr">
-                            ESI/SI (source index register) – индекс источника
+                            <span>ESI/SI </span>(source index register) – индекс источника
                           </li>
                           <li class="tabs__class-registr">
-                            EDI/DI (destination index register) – индекс приёмника (получателя)
+                            <span>EDI/DI </span>(destination index register) – индекс приёмника (получателя)
                           </li>
                           <li class="tabs__class-registr">
-                            ESP/SP (stack pointer register) – регистр указателя стека
+                            <span>ESP/SP </span>(stack pointer register) – регистр указателя стека
                           </li>
                           <li class="tabs__class-registr">
-                            EBP/BP (base pointer register) – регистр указателя базы кадра стека
+                            <span>EBP/BP </span>(base pointer register) – регистр указателя базы кадра стека
                           </li>
-                        </ul>                  
+                        </ul>   
+                        
+                      </p>
+                      <p class="tabs__text tabs__text_end">
+                        Несмотря на существующую специализацию, все регистры можно использовать в любых машинных операциях. Однако надо учитывать тот факт, что некоторые команды работают только с определёнными регистрами. Например, команды умножения и деления используют регистры EAX и EDX для хранения исходных данных и результата операции. Команды управления циклом используют регистр ECX в качестве счётчика цикла. <br><br>
+                        Ещё один нюанс состоит в использовании регистров в качестве базы, т.е. хранилища адреса оперативной памяти. В качестве регистров базы можно использовать любые регистры, но желательно использовать регистры EBX, ESI, EDI или EBP. В этом случае размер машинной команды обычно бывает меньше. <br><br>
+                        К сожалению, количество регистров катастрофически мало, и зачастую бывает трудно подобрать способ их оптимального использования.             
                       </p>
                     </div>
                     <div class="tabs__block" >
-                      Вторая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
-                      Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? 
+                     <p class="tabs__text">
+                      <span>ADD</span> – Сложение беззнаковых чисел. Микропроцессор выполняет сложение операндов по правилам сложения двоичных чисел.
+                     </p>
+                     <p class="tabs__text">
+                     <span>ADD операнд1, операнд2</span>—команда сложения с принципом действия:
+операнд1 = операнд1 + операнд2
+                     </p>
+                     <p class="tabs__text text-enter" >
+                      <b>В операции сложения должны участвовать операнды одного формата <span> (b-b, w-w)</span></b>
+                     </p>
+                     <p class="tabs__text text-enter">
+                      <b>
+                        Возможны сочетания 
+                      </b> 
+                      <ul class="tabs__list-reg text-enter">
+                        <li class="tabs__list-items">
+                          <p class="tabs__text">
+                             Регистр - Регистр 
+                          </p>
+                         
+                        </li>
+                        <li class="tabs__list-items">
+                          <p class="tabs__text">
+                             Память - Регистр 
+                          </p>
+                          
+                        </li>
+                        <li class="tabs__list-items">
+                          <p class="tabs__text">
+                             Регистр - Память 
+                          </p>
+                         
+                        </li>
+                        <li class="tabs__list-items">
+                          <p class="tabs__text">
+                            Регистр - Непосредственный операнд
+                          </p>
+                          
+                        </li>
+                        <li class="tabs__list-items">
+                          <p class="tabs__text">
+                           непосредственный операнд - регистр 
+                          </p>
+                          
+                        </li>
+                        <li class="tabs__list-items">
+                          <p class="tabs__text">
+                            Операция память - память выполняется через промежуточный регистр 
+                          </p>
+                          
+                        </li>
+                      </ul>
+                     
+                     </p>
+                     <p class="tabs__text text-enter">
+                      <span>
+                        Пример 1 Вычисление суммы двух чисел
+                      </span> 
+                     </p>
+
                     </div>
                     <div class="tabs__block" >
                       Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
@@ -337,10 +407,10 @@
              
             </section>
           </div>
-          <div class="test__page hidden" data-page="3">
+          <div class="test__page hidden fadeInAnim" data-page="3">
             <section class="test">
               <div class="test__container">
-                <!-- <h1 class="test__dif">
+                <h1 class="test__dif">
                   Выберите сложность
                 </h1>
                 <div class="test__dif-obj">
@@ -353,26 +423,9 @@
                   <button class="test__btn btn btn_medium" data-difficulty = hard >
                     Сложная
                   </button>
-                </div> -->
+                </div>
               </div>
               <div class="quiz">
-                <p class="quiz__question">
-                  Регистр это
-                  
-                </p>
-                <div class="quiz__answers">
-                  <button class="quiz__btn btn btn_outlined" >
-                    Регистры – собственные ячейки памяти процессора, предназначенные для
-  кратковременного хранения и обработки данных.
-  
-                  </button>
-                  <button class="quiz__btn btn btn_outlined" >
-                    Ячейки памяти компьютера, предназначенные для долгосрочного хранения данных.
-                  </button>
-                  <button class="quiz__btn btn btn_outlined" >
-                    Комплектующая компьютера, предохраняющая его от перепад напряжения.
-                  </button>
-                </div>
                
               </div>
             </section>

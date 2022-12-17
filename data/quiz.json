@@ -1,0 +1,169 @@
+[
+  {
+    "easy": {
+      "questions": [
+        {
+          "question": "123",
+          "answers": [
+            {
+              "answer": "A",
+              "isTrue": true
+            },
+            {
+              "answer": "B",
+              "isTrue": false
+            },
+            {
+              "answer": "C",
+              "isTrue": false
+            }
+          ]
+        },
+        {
+          "question": "231",
+          "answers": [
+            {
+              "answer": "A",
+              "isTrue": true
+            },
+            {
+              "answer": "B",
+              "isTrue": false
+            },
+            {
+              "answer": "C",
+              "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "423",
+          "answers": [
+            {
+              "answer": "A",
+              "isTrue": true
+            },
+            {
+              "answer": "B",
+              "isTrue": false
+            },
+            {
+              "answer": "C",
+              "isTrue": true
+            }
+          ]
+        }
+      ]
+    },
+    "medium": {
+      "questions": [
+        {
+          "question": "Chupapizi",
+          "answers": [
+            {
+              "answer": "D",
+              "isTrue": true
+            },
+            {
+              "answer": "E",
+              "isTrue": false
+            },
+            {
+              "answer": "F",
+              "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "231",
+          "answers": [
+            {
+              "answer": "A",
+              "isTrue": true
+            },
+            {
+              "answer": "B",
+              "isTrue": false
+            },
+            {
+              "answer": "C",
+              "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "423",
+          "answers": [
+            {
+              "answer": "A",
+              "isTrue": true
+            },
+            {
+              "answer": "B",
+              "isTrue": false
+            },
+            {
+              "answer": "C",
+              "isTrue": true
+            }
+          ]
+        }
+      ]
+    },
+    "hard": {
+      "questions": [
+        {
+          "question": "asd",
+          "answers": [
+            {
+              "answer": "1",
+              "isTrue": true
+            },
+            {
+              "answer": "2",
+              "isTrue": false
+            },
+            {
+              "answer": "3",
+              "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "231",
+          "answers": [
+            {
+              "answer": "A",
+              "isTrue": true
+            },
+            {
+              "answer": "B",
+              "isTrue": false
+            },
+            {
+              "answer": "C",
+              "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "423",
+          "answers": [
+            {
+              "answer": "A",
+              "isTrue": true
+            },
+            {
+              "answer": "B",
+              "isTrue": false
+            },
+            {
+              "answer": "C",
+              "isTrue": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
