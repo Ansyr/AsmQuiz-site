@@ -64,11 +64,14 @@ h3 {
   border-radius: 4px;
   background-color: #ccc;
 }
-
+.btn:hover {
+  opacity: 0.8;
+}
 .btn_medium {
   width: 200px;
   padding: 0 50px;
 }
+
 .hidden-obj {
   opacity: 0;
 }
@@ -488,7 +491,7 @@ main {
 .tabs__class-registr {
   margin-top: 30px;
 }
-/* quiz */
+/* quiz dif */
 .test {
   padding-top: 150px;
   text-align: center;
@@ -502,4 +505,33 @@ main {
 }
 .test__btn {
   margin: 0 25px 0 25px;
+}
+/* quiz-test */
+.quiz {
+  text-align: center;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.quiz__question {
+  width: 1200px;
+  text-align: center;
+}
+.quiz__btn {
+  margin-top: 20px;
+  height: auto;
+  -webkit-box-shadow: 3px 0px 8px 0px rgba(251, 253, 255, 0.24);
+  -moz-box-shadow: 3px 0px 8px 0px rgba(251, 253, 255, 0.24);
+  box-shadow: 3px 0px 8px 0px rgba(251, 253, 255, 0.24);
+}
+.quiz__btn:hover {
+  box-shadow: 5px -9px 13px 6px rgb(95 37 175 / 58%);
+  opacity: 1;
+}
+.quiz__answers {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  text-align: center;
 }
