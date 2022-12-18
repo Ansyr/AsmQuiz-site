@@ -533,6 +533,7 @@ main {
 }
 .test__dif {
   padding-bottom: 100px;
+  padding-top: 200px;
 }
 .test__dif-obj {
   display: flex;
@@ -552,6 +553,8 @@ main {
 .quiz__question {
   width: 1200px;
   text-align: center;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 .quiz__btn {
   margin-top: 20px;
@@ -594,6 +597,7 @@ main {
 .quiz__restart-btn {
   height: auto;
   border-radius: 8px;
+  margin-bottom: 50px;
 }
 .quiz__restart-btn:hover {
   opacity: 1;

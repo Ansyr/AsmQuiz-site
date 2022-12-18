@@ -3,53 +3,70 @@
     "easy": {
       "questions": [
         {
-          "question": "123",
+          "question": "Регистр это",
           "answers": [
             {
-              "answer": "A",
+              "answer": "Регистры – собственные ячейки памяти процессора, предназначенные для кратковременного хранения и обработки данных.",
               "isTrue": true
             },
             {
-              "answer": "B",
+              "answer": "Ячейки памяти компьютера, предназначенные для долгосрочного хранения данных.",
               "isTrue": false
             },
             {
-              "answer": "C",
+              "answer": "Комплектующая компьютера, предохраняющая его от перепад напряжения.",
               "isTrue": false
             }
           ]
         },
         {
-          "question": "231",
+          "question": "Команда mov",
           "answers": [
             {
-              "answer": "A",
-              "isTrue": true
-            },
-            {
-              "answer": "B",
+              "answer": "Обнуляет пользовательские регистры.",
               "isTrue": false
             },
             {
-              "answer": "C",
+              "answer": "Копирует содержимое источника и помещает это содержимое в приемник.",
               "isTrue": true
+            },
+            {
+              "answer": "Копирует значение из стека в регистр DX.",
+              "isTrue": false
             }
           ]
         },
         {
-          "question": "423",
+          "question": "Размер регистров AX BX CX DX составляет",
           "answers": [
             {
-              "answer": "A",
-              "isTrue": true
-            },
-            {
-              "answer": "B",
+              "answer": "1 байт",
               "isTrue": false
             },
             {
-              "answer": "C",
+              "answer": "2 байта",
               "isTrue": true
+            },
+            {
+              "answer": "4 байта",
+              "isTrue": false
+            }
+          ]
+        },
+        {
+          "question": "Регистр AX состоит из",
+          "answers": [
+            {
+              "answer": "Регистров AL И AH",
+              "isTrue": true
+            },
+            {
+              "answer": "Регистров SI и DI.",
+              "isTrue": false
+            },
+            {
+              "answer": "Он не делим",
+              "isTrue": false
             }
           ]
         }
@@ -58,53 +75,74 @@
     "medium": {
       "questions": [
         {
-          "question": "Chupapizi",
+          "question": "Команда PUSH BX",
           "answers": [
             {
-              "answer": "D",
-              "isTrue": true
-            },
-            {
-              "answer": "E",
+              "answer": "Обнуляет значение регистра BX, присваивая флагу нуля (ZF) значение 1",
               "isTrue": false
             },
             {
-              "answer": "F",
+              "answer": "Помещает содержимое регистра BX в начало стека",
+              "isTrue": false
+            },
+            {
+              "answer": "Помещает содержимое регистра BX на верхушку стека",
               "isTrue": true
             }
           ]
         },
         {
-          "question": "231",
+          "question": "POP BX",
           "answers": [
             {
-              "answer": "A",
-              "isTrue": true
-            },
-            {
-              "answer": "B",
+              "answer": "Возвращает регистру BX его значение до вызова команды PUSH присваивая флагу ZF значение 0.",
               "isTrue": false
             },
             {
-              "answer": "C",
+              "answer": "Берет содержимое верхушки стека и помещает в BX",
               "isTrue": true
+            },
+            {
+              "answer": "Берет содержимое начала стека и помещает в BX",
+              "isTrue": false
             }
           ]
         },
         {
-          "question": "423",
+          "question": "При вызове команды DIV",
           "answers": [
             {
-              "answer": "A",
+              "answer": "Происходит деление содержимого AX при котором целая часть записывается в AL а остаток в AH.",
               "isTrue": true
             },
             {
-              "answer": "B",
+              "answer": "Происходит деление содержимого AX при котором целая часть записывается в AH а остаток в AL.",
               "isTrue": false
             },
             {
-              "answer": "C",
+              "answer": "Происходит деление содержимого AX при котором целая часть сохраняется в AL а остаток в операнд.",
+              "isTrue": false
+            }
+          ]
+        },
+        {
+          "question": "Выберите правильную запиcь команды",
+          "answers": [
+            {
+              "answer": "Mov ax, 1234h",
               "isTrue": true
+            },
+            {
+              "answer": "Mov es, ds",
+              "isTrue": false
+            },
+            {
+              "answer": "Mov bx, 12345h",
+              "isTrue": false
+            },
+            {
+              "answer": "Mov bh, 233h",
+              "isTrue": false
             }
           ]
         }
@@ -113,52 +151,81 @@
     "hard": {
       "questions": [
         {
-          "question": "asd",
+          "question": "Тип данных dq резервирует в памяти",
           "answers": [
             {
-              "answer": "1",
-              "isTrue": true
-            },
-            {
-              "answer": "2",
+              "answer": "1 байт",
               "isTrue": false
             },
             {
-              "answer": "3",
+              "answer": "2 байта",
+              "isTrue": false
+            },
+            {
+              "answer": "4 байта",
+              "isTrue": false
+            },
+            {
+              "answer": "8 байтов",
               "isTrue": true
             }
           ]
         },
         {
-          "question": "231",
+          "question": "Если в блоке описания данных была объявлена переменная: String dw 100b dup(78h), то она будет содержать следующие данные",
           "answers": [
             {
-              "answer": "A",
-              "isTrue": true
-            },
-            {
-              "answer": "B",
+              "answer": "78787878.",
               "isTrue": false
             },
             {
-              "answer": "C",
+              "answer": "78007800",
+              "isTrue": false
+            },
+            {
+              "answer": "7800780078007800",
+              "isTrue": true
+            },
+            {
+              "answer": "В память будет 100 раз записано значение 78",
               "isTrue": true
             }
           ]
         },
         {
-          "question": "423",
+          "question": "Задать двумерный массив в ассемблере можно следующим образом",
           "answers": [
             {
-              "answer": "A",
-              "isTrue": true
-            },
-            {
-              "answer": "B",
+              "answer": "mas array[0…m][0…n]",
               "isTrue": false
             },
             {
-              "answer": "C",
+              "answer": "mas db [edx][esi]",
+              "isTrue": false
+            },
+            {
+              "answer": "mas db 6 dup(2 dup(?))",
+              "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "По умолчанию ассемблер формирует для команды jmp машинную команду длинной",
+          "answers": [
+            {
+              "answer": "3 байта",
+              "isTrue": true
+            },
+            {
+              "answer": "1 байт",
+              "isTrue": false
+            },
+            {
+              "answer": "5 байтов",
+              "isTrue": true
+            },
+            {
+              "answer": "2 байта",
               "isTrue": true
             }
           ]
