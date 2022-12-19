@@ -100,16 +100,16 @@
                       Сложениe
                     </a>
                     <a  class="tabs__item">
-                      Третья вкладка
+                      Вычитание
                     </a>
                     <a  class="tabs__item">
-                      Четвертая вкладка
+                      Умножение
                     </a>
                     <a  class="tabs__item">
-                      Пятая вкладка
+                      Деление
                     </a>
                     <a  class="tabs__item">
-                      Шестая вкладка
+                      Условные переходы
                     </a>
                     <a  class="tabs__item">
                       Седьмая вкладка
@@ -320,7 +320,7 @@
                       <span>ADD</span> – Сложение беззнаковых чисел. Микропроцессор выполняет сложение операндов по правилам сложения двоичных чисел.
                      </p>
                      <p class="tabs__text">
-                     <span>ADD операнд1, операнд2</span>—команда сложения с принципом действия:
+                     <span><br>ADD операнд1, операнд2</span>—команда сложения с принципом действия:
 операнд1 = операнд1 + операнд2
                      </p>
                      <p class="tabs__text text-enter" >
@@ -330,6 +330,7 @@
                       <b>
                         Возможны сочетания 
                       </b> 
+                      </p>
                       <ul class="tabs__list-reg text-enter">
                         <li class="tabs__list-items">
                           <p class="tabs__text">
@@ -368,30 +369,366 @@
                           
                         </li>
                       </ul>
-                     
-                     </p>
                      <p class="tabs__text text-enter">
                       <span>
                         Пример 1 Вычисление суммы двух чисел
                       </span> 
                      </p>
+                      <div class="tabs__table">
+                        <div class="tabs__table-item">
+                          <div class="tabs__table-item tabs__table-item_small-top">
+                            <p class="tabs__enter">
+                              Assembler
+                            </p>
+                          </div>
+                          <p class="tabs__enter">
+                            A dw 250 <br>
+                            B dw 125 <br>
+                            rez dw ? <br>
+                            . . .<br>
+                            mov ax,A<br>
+                            add ax,B<br>
+                            mov rez,ax
+                          </p>
+                        </div>
+                        <div class="tabs__table-item">
+                          <div class="tabs__table-item tabs__table-item_small-top">
+                            <p class="tabs__enter">
+                              C++
+                            </p>
+                          </div>
+                          <p class="tabs__enter">
+                            int A = 250; <br>
+                            int B = 125; <br>
+                            int rez = 0;  <br>
+                            . . .<br><br><br>
+                            rez = A + B<br>
+                          </p>
+                        </div>
+                      </div>
+                     <p class="tabs__text">
+                      <span>inc операнд — операция инкремента</span>, то есть увеличения значения операнда на 1;
+                     </p>
+                     <p class="tabs__text">
+                      <br>операнд = операнд + 1 <br>
+                     </p>
+                     <p class="tabs__text">
+                      <br><span>Операнд может быть регистром или адресом памяти и не может быть непосредственным операндом</span>
+                     </p>
 
+                     <div class="tabs__table">
+                      <div class="tabs__table-item">
+                        <div class="tabs__table-item tabs__table-item_small-top">
+                          <p class="tabs__enter">
+                            Assembler
+                          </p>
+                        </div>
+                        <p class="tabs__enter">
+                          A dw 250 <br>
+                          rez dw ? <br>
+                          . . .<br>
+                          mov ax,A<br>
+                          inc ax<br>
+                          mov rez,ax
+                        </p>
+                      </div>
+                      <div class="tabs__table-item">
+                        <div class="tabs__table-item tabs__table-item_small-top">
+                          <p class="tabs__enter">
+                            C++
+                          </p>
+                        </div>
+                        <p class="tabs__enter ">
+                          int A = 250; <br>
+                          int rez = 0;  <br>
+                          . . .<br><br><br>
+                          rez = A + 1<br>
+                        </p>
+                      </div>  
                     </div>
-                    <div class="tabs__block" >
-                      Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
-                      Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? 
+                    <p class="tabs__text_end"></p>
                     </div>
+                  </div>
                     <div class="tabs__block" >
-                      Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
-                      Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? 
+                      
+                      <p class="tabs__text">
+                        К командам вычитания относятся следующие:
+                      </p>
+
+                      <p class="tabs__text">
+                        <span>
+                          <br>sub операнд_1,операнд_2</span> — команда вычитания
+                        
+                        <p class="tabs__text">
+                        
+                            <br>операнд_1 = операнд_1 – операнд_2<br>
+                          
+                        </p>
+                        <p class="tabs__text">
+                          <span>
+                            <br>sbb операнд_1,операнд_2 </span> — команда вычитания с учетом заема <span>(флага CF)</span>:
+                            (subtract with borrow - вычитание с заемом)
+                            <br>
+                        </p>
+                        <p class="tabs__text">
+                          
+                           <br> операнд_1 = операнд_1 – операнд_2
+                           
+                          – значение_CF<br>
+                        </p>
+                        <p class="tabs__text">
+                          <br>флаг <span>CF</span> выполняет роль индикатора заема 1 из старшего разряда при вычитании чисел.
+                        </p>
+                      </p>
+                      <p class="tabs__text">
+                        <br>Таким образом, после команды вычитания чисел без знака нужно анализировать состояние флага <span>CF</span>. Если он установлен в 1, то это говорит о том, что произошел заем из старшего разряда и результат получился в дополнительном коде.
+                      </p>
+                    <p class="tabs__text">
+                      <br><span>dec </span>операнд — операция декремента, то есть уменьшения значения операнда на 1
+                    </p>
+                    <p class="tabs__text">
+                      <span>
+                        <br>Пример 1 Вычисление разности двух чисел<br>
+                      </span>
+                    </p>
+                    <div class="tabs__table">
+                      <div class="tabs__table-item">
+                        <div class="tabs__table-item tabs__table-item_small-top">
+                          <p class="tabs__enter">
+                            Assembler
+                          </p>
+                        </div>
+                        <p class="tabs__enter">
+                          A dw 250 <br>
+                          B dw 125 <br>
+                          rez dw ? <br>
+                          . . .<br>
+                          mov ax,A<br>
+                          sub ax,B<br>
+                          mov rez,ax
+                        </p>
+                      </div>
+                      <div class="tabs__table-item">
+                        <div class="tabs__table-item tabs__table-item_small-top">
+                          <p class="tabs__enter">
+                            C++
+                          </p>
+                        </div>
+                        <p class="tabs__enter ">
+                          int A = 250; <br>
+                          int B = 125; <br>
+                          int rez = 0;  <br>
+                          . . .<br><br><br>
+                          rez = A - B<br>
+                        </p>
+                      </div>  
                     </div>
-                    <div class="tabs__block" >
-                      Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
-                      Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? 
+                  
+
+                    <p class="tabs__text">
+                      <span>
+                        <br>Пример 2. Уменьшение числа на 1<br>
+                      </span>
+                    </p>
+                    <div class="tabs__table">
+                      <div class="tabs__table-item">
+                        <div class="tabs__table-item tabs__table-item_small-top">
+                          <p class="tabs__enter">
+                            Assembler
+                          </p>
+                        </div>
+                        <p class="tabs__enter">
+                          A dw 250 <br>
+                          rez dw ? <br>
+                          . . .<br>
+                          mov ax,A<br>
+                          dec ax<br>
+                          mov rez,ax
+                        </p>
+                      </div>
+                      <div class="tabs__table-item">
+                        <div class="tabs__table-item tabs__table-item_small-top">
+                          <p class="tabs__enter">
+                            C++
+                          </p>
+                        </div>
+                        <p class="tabs__enter ">
+                          int A = 250; <br>
+                          int rez = 0;  <br>
+                          . . .<br><br><br>
+                          rez = A - 1 <br>
+                        </p>
+                      </div>  
                     </div>
+                    <p class="tabs__text_end"></p>
+                  </div>
+                    
+
+
+
+
                     <div class="tabs__block" >
-                      Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
-                      Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? 
+                      <p class="tabs__text">
+                        Для умножения в Assembler используют команду <span>mul</span>. 
+                      </p>
+                      <p class="tabs__text">
+                        Команда <span>mul</span> (multiple) используется для умножения числа на регистр ах, состоит из одного операнда:
+                      </p>
+                      <p class="tabs__text">
+                        <br><span>
+                          mul опeранд 
+                        </span>
+                        - команда умножения с принципом действия:
+                      </p>
+                      <p class="tabs__text">
+                        AX = операнд * AX, то есть результат помещается в AX
+                      </p>
+                      
+                      <div class="tabs__table">
+                        <div class="tabs__table-item">
+                          <div class="tabs__table-item tabs__table-item_small-top">
+                            <p class="tabs__enter">
+                              Assembler
+                            </p>
+                          </div>
+                          <p class="tabs__enter">
+                            A dw 2 <br>
+                            B dw 3 <br>
+                            rez dw ? <br>
+                            . . .<br>
+                            mov ax,A<br>
+                            mov bx,B<br>
+                            mul bx; AX = 2 * 3 = 6<br>
+                            mov rez,ax
+                          </p>
+                        </div>
+                        <div class="tabs__table-item">
+                          <div class="tabs__table-item tabs__table-item_small-top">
+                            <p class="tabs__enter">
+                              C++
+                            </p>
+                          </div>
+                          <p class="tabs__enter ">
+                            int A = 2; <br>
+                            int B = 3; <br>
+                            int rez = 0;  <br>
+                            . . .<br><br><br><br>
+                            rez = A * B<br>
+                          </p>
+                        </div>  
+                      </div>
+
+                      <p class="tabs__text">
+                        <br>При умножении в Assembler есть некоторые тонкости, о которых дальше и пойдет речь. Тонкости эти состоят в том, что от того, какой размерности регистр мы делим или умножаем многое зависит. 
+                      </p>
+                      <p class="tabs__text">
+                        <br>Примеры:
+                      </p>
+                      <p class="tabs__text">
+                        Если аргументом команды <span>mul</span>  является 1-байтовый регистр <span>(например mul BL)</span>, то значение этого регистра <span>BL</span> умножится на значение регистра <span>AL</span>, а результат запишется в регистр <span>AX</span>, и так будет всегда, независимо от того, какой 1-байтовый регистр мы возьмем. <span>(BL * AL = AX) <br><br></span>
+                      </p>
+                      <p class="tabs__text">
+                        Если аргументом является регистр из 2 байт  <span>(например mul BL)</span>, то значение в регистре <span>BX</span> умножится на значение, хранящееся в регистре <span>ax</span>, а результат умножения запишется в регистр eax. <span>(bx*ax = eax) <br><br></span>
+                      </p>
+
+                      <p class="tabs__text">
+                        Если аргументом является регистр из 4 байт <span>(например mul ebx)</span> , то значение в регистре <span>ebx</span> умножится на значение, хранящееся в регистре eax, а результат умножения запишется в 2 регистра: <span>edx</span>  и <span>eax</span>. <span>(ebx*eax = edx:eax) <br><br></span>
+                      </p>
+                      <p class="tabs__text_end"></p>
+                    </div>
+
+
+
+                    <div class="tabs__block" >
+                      <p class="tabs__text">
+                        DIV-деление, так же как MUL состоит из одного операнда и результат помещает в AX следующим образом: <br>
+                      </p>
+                      <p class="tabs__text">
+                        <span>
+                          <br>Целая часть деления отправляется в AL, дробная часть в AH
+                        </span>
+                      </p>
+                      <p class="tabs__text">
+                        Синтаксис следующий: <span> div операнд </span>, принцип действия:
+                      </p>
+                      <p class="tabs__text">
+                        <br> <span>
+                          AX = AX / операнд </span>, то есть результат помещается в AX
+                      </p>
+                     
+
+                      <div class="tabs__table">
+                        <div class="tabs__table-item">
+                          <div class="tabs__table-item tabs__table-item_small-top">
+                            <p class="tabs__enter">
+                              Assembler
+                            </p>
+                          </div>
+                          <p class="tabs__enter">
+                            A dw 6 <br>
+                            B dw 3 <br>
+                            rez dw ? <br>
+                            . . .<br>
+                            mov ax,A<br>
+                            mov bx,B<br>
+                            div bx; AX = 6 / 3 = 2 <br>
+                            ;(AH = 0, Al = 2)<br>
+                            mov rez,ax; rez = 2
+                          </p>
+                        </div>
+                        <div class="tabs__table-item">
+                          <div class="tabs__table-item tabs__table-item_small-top">
+                            <p class="tabs__enter">
+                              C++
+                            </p>
+                          </div>
+                          <p class="tabs__enter ">
+                            int A = 6; <br>
+                            int B = 3; <br>
+                            int rez = 0;  <br>
+                            . . .<br><br><br><br><br>
+                            rez = A / B<br>
+                          </p>
+                        </div>  
+                      </div>
+
+                      <p class="tabs__text">
+                        Если аргументом команды <span>div</span> является 1-байтовый регистр <span>(например div bl)</span>, то значение регистра <span>ax</span> поделится на значение регистра <span>bl</span>, результат от деления запишется в регистр <span>al</span>, а остаток запишется в регистр <span>ah</span>.<span>(ax/bl = al, ah)</span>
+                      </p>
+
+                      <p class="tabs__text">
+                        Если аргументом является регистр из 2 байт <span>(напримерdiv bx)</span>, то процессор поделит число, старшие биты которого хранит регистр <span>dx</span>, а младшие <span>ax</span> на значение, хранящееся в регистре <span>bx</span>. Результат от деления запишется в регистр <span>ax</span>, а остаток запишется в регистр <span>dx</span>.<span>(dx,ax)/bx = ax, dx</span> 
+                      </p>
+                    </div>
+
+
+                    <div class="tabs__block" >
+                     <p class="tabs__text">
+                      В языке ассемблера отсутствуют операторы, реализующие основные алгоритмические конструкции, такие как ветвление и циклы. Указанные конструкции моделируются с использованием машинных команд условной и безусловной передачи управления, а также команд сравнения, организации счетного цикла и некоторых других.
+                     </p>
+                     <p class="tabs__text">
+                      <br>Изменить порядок выполнения команд можно с помощью команд передачи управления. Они делятся на две большие группы:
+                     </p>
+
+                     <p class="tabs__text">
+                      <span>
+                       Команды безусловного перехода
+                      </span>
+                     </p>
+                     <p class="tabs__text">
+                      <br>При их выполнении управление всегда передается на новый участок программы. При этом в регистр счетчика команд загружается новое значение, что вызывает передачу управления по этому адресу.
+                     </p>
+
+                     <p class="tabs__text">
+                      <span>
+                        o	Команды условного перехода
+                      </span>
+                     </p>
+
+                     <p class="tabs__text">
+                      <br> При выполнении таких команд управление на новый участок передается только в случае, если истинно одно из условий. О наступлении определенного условия процессор узнает, анализируя содержимое регистра ECX, а также некоторых битов регистра флагов. 
+                     </p>
+
                     </div>
                     <div class="tabs__block" >
                       Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
@@ -418,7 +755,7 @@
                     Легкая
                   </button>
                   <button class="test__btn btn btn_medium" data-difficulty = medium >
-                    Чупапизи
+                    Средняя
                   </button>
                   <button class="test__btn btn btn_medium" data-difficulty = hard >
                     Сложная
@@ -457,7 +794,7 @@
                       <a href="https://vk.com/yaporezalkillomsvoukatanu" class="user__link user__link_vk hidden-obj"data-anim target="_blank">
                         vk
                       </a>
-                      <a href="" class="user__link user__link_tg hidden-obj"data-anim target="_blank">
+                      <a href="https://t.me/zaryadilKillomSvouKatanu" class="user__link user__link_tg hidden-obj"data-anim target="_blank">
                         tg
                       </a>
                       <a href="https://github.com/Ansyr" class="user__link user__link_git hidden-obj"data-anim target="_blank">

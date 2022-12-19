@@ -145,6 +145,61 @@
               "isTrue": false
             }
           ]
+        },
+        {
+          "question": "При вызове команды DIV",
+          "answers": [
+            {
+              "answer": "Происходит деление содержимого AX при котором целая часть записывается в AL а остаток в AH",
+              "isTrue": true
+            },
+            {
+              "answer": "Происходит деление содержимого AX при котором целая часть записывается в AH а остаток в AL",
+              "isTrue": false
+            },
+            {
+              "answer": "Происходит деление содержимого AX при котором целая часть сохраняется в AL а остаток в операнд",
+              "isTrue": false
+            }
+          ]
+        },
+        {
+          "question": "После выполнения команды mul dl, результат операции запишется в",
+          "answers": [
+            {
+              "answer": "Регистр AL",
+              "isTrue": false
+            },
+            {
+              "answer": "Регистр ax",
+              "isTrue": true
+            },
+            {
+              "answer": "Регистры ax dx",
+              "isTrue": false
+            }
+          ]
+        },
+        {
+          "question": "Команда cld ",
+          "answers": [
+            {
+              "answer": "Обнуляет флаг df",
+              "isTrue": true
+            },
+            {
+              "answer": "Записывает в флаг zf единицу",
+              "isTrue": false
+            },
+            {
+              "answer": "Вызывает прерывание исполнения программы",
+              "isTrue": false
+            },
+            {
+              "answer": "Обнуляет флаг zf",
+              "isTrue": false
+            }
+          ]
         }
       ]
     },
@@ -227,6 +282,61 @@
             {
               "answer": "2 байта",
               "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "С помощью флага df определяется",
+          "answers": [
+            {
+              "answer": "Необходимость выполнения команды cld",
+              "isTrue": false
+            },
+            {
+              "answer": "Окончания строки",
+              "isTrue": false
+            },
+            {
+              "answer": "Направление движения по строке",
+              "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "С помощью флага df определяется",
+          "answers": [
+            {
+              "answer": "Необходимость выполнения команды cld",
+              "isTrue": false
+            },
+            {
+              "answer": "Окончания строки",
+              "isTrue": false
+            },
+            {
+              "answer": "Направление движения по строке",
+              "isTrue": true
+            }
+          ]
+        },
+        {
+          "question": "По умолчанию ассемблер формирует для команды jmp машинную команду длинной ",
+          "answers": [
+            {
+              "answer": "3 байта",
+              "isTrue": true
+            },
+            {
+              "answer": "1 байт",
+              "isTrue": false
+            },
+            {
+              "answer": "5 байтов",
+              "isTrue": false
+            },
+            {
+              "answer": "2 байта",
+              "isTrue": false
             }
           ]
         }
