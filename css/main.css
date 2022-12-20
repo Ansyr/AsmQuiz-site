@@ -77,7 +77,9 @@ h3 {
   width: 200px;
   padding: 0 50px;
 }
-
+.btn_medium:hover {
+  box-shadow: 5px -9px 13px 6px rgb(95 37 175 / 58%);
+}
 .hidden-obj {
   opacity: 0;
 }
@@ -267,7 +269,7 @@ main {
   height: 100%;
 }
 .description__link_test {
-  background-image: url(../img/1.jpg);
+  background-image: url(../img/2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -437,6 +439,7 @@ main {
   border-radius: 6px;
   text-align: center;
   padding-top: 15px;
+  cursor: pointer;
 }
 .tabs__items:hover {
   color: #000;
@@ -549,6 +552,9 @@ main {
   font-family: 'Roboto Mono', sans-serif;
   letter-spacing: -1px;
 }
+.tabs__name-jmp {
+  text-transform: none;
+}
 .tabs__text {
   font-family: 'Roboto Mono', sans-serif;
   letter-spacing: -1px;
@@ -572,6 +578,33 @@ main {
 .tabs__table-item_small-top {
   height: 80px;
 }
+
+.tabs__table-obj-flags {
+  display: block;
+}
+.tabs__obj-items {
+  display: flex;
+}
+.tabs__table-obj {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  border: 3px solid #ccc;
+}
+.tabs__table-obj_first {
+  width: 200px;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Roboto mono', sans-serif;
+}
+.tabs__table-obj_second {
+  width: 600px;
+}
+.tabs__table-obj_third {
+  width: 250px;
+}
+
 /* quiz-test */
 .quiz {
   text-align: center;

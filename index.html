@@ -109,13 +109,13 @@
                       Деление
                     </a>
                     <a  class="tabs__item">
-                      Условные переходы
+                      Переходы
                     </a>
                     <a  class="tabs__item">
-                      Седьмая вкладка
+                      Циклы
                     </a>
                     <a class="tabs__item">
-                      Восьмая вкладка
+                      Массивы
                     </a>
                   </nav>
                   <div class="tabs__body">
@@ -563,11 +563,7 @@
                     <p class="tabs__text_end"></p>
                   </div>
                     
-
-
-
-
-                    <div class="tabs__block" >
+                  <div class="tabs__block" >
                       <p class="tabs__text">
                         Для умножения в Assembler используют команду <span>mul</span>. 
                       </p>
@@ -635,9 +631,7 @@
                         Если аргументом является регистр из 4 байт <span>(например mul ebx)</span> , то значение в регистре <span>ebx</span> умножится на значение, хранящееся в регистре eax, а результат умножения запишется в 2 регистра: <span>edx</span>  и <span>eax</span>. <span>(ebx*eax = edx:eax) <br><br></span>
                       </p>
                       <p class="tabs__text_end"></p>
-                    </div>
-
-
+                  </div>
 
                     <div class="tabs__block" >
                       <p class="tabs__text">
@@ -729,14 +723,476 @@
                       <br> При выполнении таких команд управление на новый участок передается только в случае, если истинно одно из условий. О наступлении определенного условия процессор узнает, анализируя содержимое регистра ECX, а также некоторых битов регистра флагов. 
                      </p>
 
+                     <p class="tabs__text">
+                      <span>
+                        Безусловные переходы
+                      </span>
+                     </p>
+                     <p class="tabs__text">
+                      <br><br>Основной инструкцией перехода в наборе инструкций процессора 8086 является  инструкция JMP. Эта инструкция указывает процессору 8086, что в качестве следующей за JMP инструкцией нужно выполнить инструкцию  по целевой метке. Например, после завершения выполнения фрагмента программы:
+                     </p>
+
+                     
+                     <div class="tabs__table">
+                      <div class="tabs__table-item">
+                        <div class="tabs__table-item tabs__table-item_small-top">
+                          <p class="tabs__enter">
+                            Assembler
+                          </p>
+                        </div>
+                        <p class="tabs__enter">
+                          mov   ax,1 <br>
+                          jmp   AddTwoToAX <br>
+                          AddOneToAx: <br>
+                              inc   ax<br>
+                              jmp   AXIsSet<br>
+                          AddTwoToAX:<br>
+                              inc   ax <br>
+                          AXIsSet:<br>
+                        </p>
+                      </div>
+                     </div>
+
+                     <p class="tabs__text">
+                      регистр <span>AX</span> будет содержать значение 2, а инструкции <span>ADD</span>   и <span>JMP</span>, следующие за меткой <span class ="tabs__name-jmp">AddOneToAX</span>, никогда выполнены не будут. 
+                     </p>
+                    
+                     <p class="tabs__text">
+                      <span>
+                        Условные переходы
+                      </span>
+                     </p>
+
+                     <p class="tabs__text">
+                      Описанные в предыдущем разделе инструкции  переходов  -  это только  часть того, что вам потребуется для написания полезных программ. В действительности необходима возможность писать такие программы,  которые могут принимать решения. Именно это можно делать с помощью операций условных переходов.
+                     </p>
+
+                     <p class="tabs__text">
+                      <br>Инструкция условного  перехода может  осуществлять  или  нет переход на целевую (указанную в ней) метку, в зависимости от состояния регистра флагов. Рассмотрим следующий пример:
+                     </p>
+
+                     <div class="tabs__table">
+                      <div class="tabs__table-item">
+                        <div class="tabs__table-item tabs__table-item_small-top">
+                          <p class="tabs__enter">
+                            Assembler
+                          </p>
+                        </div>
+                        <p class="tabs__enter">
+                          mov ah,1           ;функция DOS ввода с клавиатуры <br>
+                          int 21h            ; получить следующую нажатую клавишу <br>
+                          cmp al,'A'         ; была нажата буква "A"? <br>
+                          je AWasTyped       ; да, обработать ее<br>
+                          mov [TampByte],al  ; нет, сохранить символ<br>
+                          .<br>
+                          . <br>
+                          .<br>
+                          AWasTyped:<br>
+                          push ax            ; сохранить символ в стеке<br>
+                        </p>
+                      </div>
+                     </div>
+
+
+                     <ul class="tabs__table-obj-flags">
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          Название
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Значение
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          Проверяемые флаги
+                        </div>
+                      </li>
+
+                      
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JB/JNAE
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если меньше / перейти, если  не больше или равно
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          CF = 1
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JAE/JNB
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если больше или равно / перейти, если не меньше
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          CF = 0
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JBE/JNA
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если меньше или равно / перейти, если не больше
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          CF = 1 или ZF = 1
+                        </div>
+                      </li>
+                     
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JA/JNBE
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если больше / перейти, если не меньше или равно
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          CF = 0 и ZF = 0
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JE/JZ
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если равно
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          ZF = 1
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JNE/JNZ
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если не равно
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          ZF = 0
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JL/JNGE
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если меньше чем / перейти, если не больше чем или равно
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          SF = OF
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JGE/JNL
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если больше чем или равно /перейти, если не меньше чем
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          SF = OF
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JLE/JNLE
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если меньше чем или равно / перейти, если не больше, чем
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          ZF = 1 или SF = OF
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JG/JNLE
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если больше чем / перейти, если не меньше чем или равно
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          ZF = 0 или SF = OF
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JP/JPE
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти по четности
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          PF = 1
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JNP/JPO
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти по нечетности
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          PF = 0
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JS
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти по знаку
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          SF = 1
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JNS
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти, если знак не установлен
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          SF = 0
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JC
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти при наличии переноса
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          CF = 1
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JNC
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти при отсутствии переноса
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          CF = 0
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JO
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти по переполнению
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          OF = 1
+                        </div>
+                      </li>
+
+                      <li class="tabs__obj-items">
+                        <div class="tabs__table-obj tabs__table-obj_first">
+                          JNO
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_second">
+                          Перейти при отсутствии переполнения
+                        </div>
+  
+                        <div class="tabs__table-obj tabs__table-obj_third">
+                          OF = 0
+                        </div>
+                      </li>
+
+                     </ul>
+                     <P class="tabs__text_end"></P>
+
                     </div>
                     <div class="tabs__block" >
-                      Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
-                      Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? 
+
+                      <p class="tabs__text">
+                        Для организации цикла предназначена команда <span>LOOP</span>. У этой команды один операнд — имя метки, на которую осуществляется переход. В качестве счётчика цикла используется регистр <span>CX</span>. Команда <span>LOOP</span> выполняет декремент <span>CX</span>, а затем проверяет его значение. Если содержимое <span> CX</span> не равно нулю, то осуществляется переход на метку, иначе управление переходит к следующей после <span>LOOP</span> команде.
+                      </p>
+                      <p class="tabs__text">
+                        <br><br><span>Пример цикла</span><br>
+                      </p>
+
+                      <p class="tabs__text">
+                       <br> В качестве примера напишем простую программу, которая будет печатать все буквы английского алфавита. <span>ASCII-коды</span> этих символов расположены последовательно, поэтому можно выводить их в цикле. Для вывода символа на экран используется функция <span>DOS 02h</span>  (выводимый байт должен находиться в регистре <span>DL</span>).
+                      </p>
+                      
+
+                      <div class="tabs__table">
+                        <div class="tabs__table-item">
+                          <div class="tabs__table-item tabs__table-item_small-top">
+                            <p class="tabs__enter">
+                              Assembler
+                            </p>
+                          </div>
+                          <p class="tabs__enter">
+                            use16                 ;Генерировать 16-битный код <br>
+                            org 100h              ;Программа начинается с адреса 100h <br><br><br>
+                            mov ah,02h        ;Для вызова функции DOS 02h - вывод символа <br>
+                            mov dl,'A'        ;Первый выводимый символ<br>
+                            mov cx,26         ;Счётчик повторений цикла<br>
+                            metka:<br>
+                            int 21h           ;Обращение к функции DOS <br>
+                            inc dl            ;Следующий символ<br>
+                            loop metka        ;Команда цикла <br><br><br>
+
+                                   mov ah,09h        ;Функция DOS 09h - вывод строки <br>
+                                   mov dx,press      ;В DX адрес строки <br>
+                                   int 21h           ;Обращение к функции DOS<br><br><br>
+                                   mov ah,08h        ;Функция DOS 08h - ввод символа без эха<br>
+                                   int 21h           ;Обращение к функции DOS<br><br><br>
+                                   
+                                   mov ax,4C00h      <br>
+                                   int 21h           ; Завершение программы      <br>
+                                   ;-------------------------------------------------------     <br>
+                                   press:      <br>
+                                   db 13,10,'Press any key...$' <br>
+                          </p>
+                        </div>
+                       </div>
+
+                       <p class="tabs__text tabs__text_end">
+                        Команды <span>int 21h</span>  и <span>inc dl</span> будут выполняться в цикле 26 раз. Для того, чтобы программа не закрылась сразу, используется функция <span>DOS 08h</span>  — ввод символа с клавиатуры без эха, то есть вводимый символ не отображается.
+                       </p>
+
                     </div>
                     <div class="tabs__block" >
-                      Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Unde natus adipisci laborum officiis, minima. Possimus cum earum, repellendus, deleniti dolorum reiciendis eligendi.
-                      Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Saepe quos exercitationem quisquam, excepturi. Adipisci, ullam molestiae? 
+                     
+                     <p class="tabs__text">
+                      Специальных средств описания массивов в программах ассемблера, конечно, нет. При необходимости использовать массив в программе его нужно моделировать одним из следующих способов:
+                     </p> 
+
+                     <p class="tabs__text">
+                      Перечислением элементов массива в поле операндов одной из директив описания данных. При перечислении элементы разделяются запятыми. 
+                     </p>
+                     <p class="tabs__text">
+                      <span>К примеру:</span>
+                     </p>
+                     <p class="tabs__text">
+                      ;массив из 5 элементов.Размер каждого элемента 4 байта:
+                     </p>
+                     <p class="tabs__text">
+                      mas dd 1,2,3,4,5  
+                     </p>
+
+                     <p class="tabs__text">
+                      <br>Используя оператор повторения <span>dup</span>.
+                     </p>
+                     <p class="tabs__text">
+                        <span>К примеру:</span>
+                     </p>
+                      <p class="tabs__text">
+                        <br>;массив из 5 нулевых элементов. <br>
+                        ;Размер каждого элемента 2 байта: <br>
+                        mas dw 5 dup (0) <br><br>
+                      </p>
+                      
+                      <p class="tabs__text">
+                        Такой способ определения используется для резервирования памяти с целью размещения и инициализации элементов массива. <br><br>
+                      </p>
+
+                      <p class="tabs__text">
+                        <span>
+                          Двумерные массивы: <br>
+                        </span>
+                      </p>
+                      <p class="tabs__text">
+                        С представлением одномерных массивов в программе на ассемблере и организацией их обработки все достаточно просто. А как быть если программа должна обрабатывать двухмерный массив? Все проблемы возникают по-прежнему из-за того, что специальных средств для описания такого типа данных в ассемблере нет. Двухмерный массив нужно моделировать. На описании самих данных это почти никак не отражается — память под массив выделяется с помощью директив резервирования и инициализации памяти.
+                      </p>
+
+                      <p class="tabs__text">
+                        Непосредственно моделирование обработки массива производится в сегменте кода, где программист, описывая алгоритм обработки ассемблеру, определяет, что некоторую область памяти необходимо трактовать как двухмерный массив.
+                      </p>
+
+                      <p class="tabs__text">
+                        При этом вы вольны в выборе того, как понимать расположение элементов двухмерного массива в памяти: по строкам или по столбцам.
+                      </p>
+
+                      <p class="tabs__text">
+                        Например, пусть имеется массив чисел (размером в 1 байт) <span>mas(i, j)</span>  с размерностью 4 на 4 <br><br>
+                        <span class = "tabs__name-jmp">
+                          (i= 0...3, j = 0...3):
+                        </span>
+                        <p class="tabs__text">
+                          23 04 05 67 <br>
+                          05 06 07 99 <br>
+                          67 08 09 23 <br>
+                          87 09 00 08 <br><br>
+                        </p>
+                        <p class="tabs__text">
+                          В памяти элементы этого массива будут расположены в следующей последовательности: <br>
+                        </p>
+                        <p class="tabs__text tabs__text_end">
+                          <span>
+                             <br>23 04 05 67 05 06 07 99 67 08 09 23 87 09 00 08
+                          </span>
+                         
+                        </p>
+                      </p>
+
                     </div>
                   </div>
                 </div>
