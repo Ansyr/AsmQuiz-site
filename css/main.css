@@ -666,3 +666,71 @@ main {
   opacity: 1;
   box-shadow: 5px -9px 13px 6px rgb(95 37 175 / 58%);
 }
+@media (1024px < width <= 1350px) {
+  .description__object_left,
+  .description__object_right {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .description__text_left,
+  .description__text_right {
+    position: initial;
+  }
+  .description__link_theory {
+    margin-top: 30px;
+  }
+
+  .description__object_right {
+    width: 700px;
+    height: 425px;
+  }
+
+  .tabs__text {
+    width: 800px;
+  }
+
+  .tabs__reg-obj_long {
+    width: 250px;
+  }
+
+  .tabs__reg-obj_short_1_red {
+    width: 250px;
+  }
+
+  .tabs__table-obj_first {
+    width: 100px;
+  }
+  .tabs__table-obj_second {
+    width: 400px;
+  }
+  .tabs__table-obj_third {
+    width: 160px;
+  }
+
+  .user__list-info {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .user__info-items {
+    margin-bottom: 60px;
+  }
+  .user__ref-list {
+    text-align: center;
+    justify-content: center;
+  }
+  .user__info-items:nth-child(2) {
+    margin-left: 0;
+  }
+  .user {
+    padding-top: 60px;
+  }
+  .user__info:before {
+    width: 850px;
+  }
+
+  .quiz__answers {
+    width: 800px;
+  }
+}
