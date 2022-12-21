@@ -686,10 +686,9 @@ main {
     height: 425px;
   }
 
-  .tabs__text {
-    width: 800px;
+  .tabs__item {
+    width: 150px;
   }
-
   .tabs__reg-obj_long {
     width: 250px;
   }
@@ -707,7 +706,16 @@ main {
   .tabs__table-obj_third {
     width: 160px;
   }
-
+  .tabs__reg-red_short {
+    width: 250px;
+  }
+  .tabs__reg-obj_short {
+    width: 125px;
+  }
+  .tabs__reg-items_red .tabs__reg-obj_short_1 {
+    width: 250px;
+    background-color: #b42d29;
+  }
   .user__list-info {
     flex-direction: column;
     justify-content: center;
@@ -732,5 +740,8 @@ main {
 
   .quiz__answers {
     width: 800px;
+  }
+  .main__description {
+    padding: 0;
   }
 }
